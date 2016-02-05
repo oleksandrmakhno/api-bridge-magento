@@ -7,7 +7,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
      *
      * @var string
      */
-    protected $apiBridgeMagento = 'api-bridge-magento';
+    protected $userApiBridgeMagento = 'api-bridge-magento';
 
     /**
      * @var
@@ -29,18 +29,19 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
         $this->allParam = $this->getAllParams();
 
         // set api key
-        $this->apiKey = isset($this->apiKey) ? $this->apiKey : \Pimcore\Model\User::getByName($this->apiBridgeMagento)->getApiKey();
+        $this->apiKey = isset($this->apiKey) ? $this->apiKey : \Pimcore\Model\User::getByName($this->userApiBridgeMagento)->getApiKey();
 
         if (!$this->validateApiKey()) {
             die; // no any error info provided
         }
     }
 
+    /**
+     * @return bool
+     */
     protected function validateApiKey()
     {
-        $res = $this->apiKey === $this->allParam['apiKey'];
-
-        return $res;
+        return $this->apiKey === $this->allParam['apiKey'];
     }
 
     /**
@@ -87,7 +88,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
 
         // fetch data logic
         $list = new \Pimcore\Model\Object\MagentoBaseProduct\Listing();
-        $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku='$sku'");
+        $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku = '$sku'");
         $ob = array_pop($list->getObjects());
 
         return $this->applyData($res, $ob);
