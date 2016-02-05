@@ -3,6 +3,13 @@
 class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
 {
     /**
+     * api user name
+     *
+     * @var string
+     */
+    protected $apiBridgeMagento = 'api-bridge-magento';
+
+    /**
      * @var
      */
     protected $apiKey;
@@ -20,12 +27,9 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
     public function init()
     {
         $this->allParam = $this->getAllParams();
-        //var_dump($this->allParam);
 
         // set api key
-        if (!isset($this->apiKey) && isset($this->allParam['apiKey'])) {
-            $this->apiKey = $this->apiKeyClient;
-        }
+        $this->apiKey = isset($this->apiKey) ? $this->apiKey : \Pimcore\Model\User::getByName($this->apiBridgeMagento)->getApiKey();
 
         if (!$this->validateApiKey()) {
             die; // no any error info provided
@@ -34,7 +38,9 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
 
     protected function validateApiKey()
     {
-        return true; // TODO add api key validation
+        $res = $this->apiKey === $this->allParam['apiKey'];
+
+        return $res;
     }
 
     /**
@@ -59,7 +65,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
     protected function applyData(array $scheme, $ob)
     {
         $res = [];
-        foreach ($scheme as $key => $value) {
+        foreach ($scheme as $key) {
             $getter = 'get' . ucfirst($key);
             $res[$key] = $ob->$getter();
         }
@@ -75,10 +81,11 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
     {
         // list needed fields here
         $res = [
-            'sku' => $sku,
-            'info' => '',
+            'sku',
+            'info',
         ];
 
+        // fetch data logic
         $list = new \Pimcore\Model\Object\MagentoBaseProduct\Listing();
         $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku='$sku'");
         $ob = array_pop($list->getObjects());

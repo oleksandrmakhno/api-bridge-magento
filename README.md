@@ -19,8 +19,9 @@ Manually:
 todo
 ```
 
-1. pimcore => settings => users / roles => users => generate api key 
-2. magento .... api key 
+1. pimcore => settings => users / roles => users => create user 'api-bridge-magento' 
+2. pimcore => settings => users / roles => users => generate user api key
+3. set pimcore api key in magento 
 
 ## Magento installation
 
