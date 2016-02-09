@@ -1,5 +1,6 @@
 {
   "name": "oleksandrmakhno/api-bridge-magento",
+  "version": "0.0.1",
   "type": "plugin",
   "description": "Provides api interface for magento",
   "keywords": [
