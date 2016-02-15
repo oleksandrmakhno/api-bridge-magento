@@ -1,0 +1,26 @@
+{
+  "name": "oleksandrmakhno/api-bridge-magento",
+  "version": "0.0.1",
+  "type": "plugin",
+  "description": "Provides api interface for magento",
+  "keywords": [
+    "api",
+    "bridge",
+    "magento",
+    "pimcore",
+    "integration"
+  ],
+  "homepage": "https://github.com/oleksandrmakhno/api-bridge-magento",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Oleksandr Makhno",
+      "email": "option25@gmail.com",
+      "homepage": "https://ua.linkedin.com/in/oleksandr-makhno-98a30b45",
+      "role": "Software developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  }
+}
