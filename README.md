@@ -1,8 +1,8 @@
 # Pimcore api bridge magento 
 
-Provides api interface for magento. 
+Provides api interface for magento 
 
-Bridge includes 2 extensions:
+Bridge includes 2 extensions: 
 
 1. magento extension api-bridge-pimcore 
 2. pimcore plugin api-bridge-magento 
