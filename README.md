@@ -35,3 +35,4 @@ Generate api key:
 ## Release History
 
 * 20160205 0.0.1 pimcore plugin initial version 
+* 20160216 0.0.2 added logic to install as pimcore plugin 
