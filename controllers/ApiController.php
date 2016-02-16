@@ -91,6 +91,6 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
         $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku = '$sku'");
         $ob = array_pop($list->getObjects());
 
-        return $this->applyData($res, $ob);
+        return $ob instanceof Pimcore\Model\Object\MagentoBaseProduct ? $this->applyData($res, $ob) : [];
     }
 }
