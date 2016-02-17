@@ -42,3 +42,8 @@ response: {"sku":"e123","info":"info magento product"}
 
 * 20160205 0.0.1 pimcore plugin initial version 
 * 20160216 0.0.2 added logic to install as pimcore plugin 
+
+## Maintainer 
+Oleksandr Makhno
+option25@gmail.com 
+<a href='https://ua.linkedin.com/in/oleksandr-makhno-98a30b45'>https://ua.linkedin.com/in/oleksandr-makhno-98a30b45</a>
