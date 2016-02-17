@@ -19,7 +19,7 @@ Manually:
 https://github.com/oleksandrmakhno/api-bridge-magento.git
 ```
 
-Create pimcore object, enable api, generate pimcore api key, enable pimcore plugin:  
+Manage pimcore settings: 
 
 ```
 1. pimcore => settings => object => classes => add class 'MagentoBaseProduct' => import (button in the bottom) => objectDefinition/class_MagentoBaseProduct_export.json 
