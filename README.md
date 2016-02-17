@@ -1,13 +1,11 @@
-# Pimcore api bridge magento 
-
-Provides api interface for magento 
+# Pimcore plugin api-bridge-magento 
 
 Bridge includes 2 extensions: 
 
-1. magento extension api-bridge-pimcore 
-2. pimcore plugin api-bridge-magento 
+1. magento extension https://github.com/oleksandrmakhno/api-bridge-pimcore 
+2. pimcore plugin https://github.com/oleksandrmakhno/api-bridge-magento
 
-## Pimcore installation
+## Pimcore plugin installation
 
 Using Composer:  
 
@@ -39,9 +37,6 @@ Test url (api returns data or nothing):
 http://myhost.local/plugin/ApiBridgeMagento/api/gateway?commandName=getProduct&sku=e123&apiKey=mypimcorerestapikey 
 response: {"sku":"e123","info":"info magento product"}
 ```
-
-## Magento installation
-
 
 ## Release History
 
