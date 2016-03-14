@@ -38,7 +38,7 @@ http://myhost.local/plugin/ApiBridgeMagento/api/gateway?commandName=getProduct&s
 response: {"sku":"e123","info":"info magento product"}
 ```
 
-## Release History
+## Release history
 
 * 20160205 0.0.1 pimcore plugin initial version 
 * 20160216 0.0.2 added logic to install as pimcore plugin 
