@@ -84,6 +84,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
         $res = [
             'sku',
             'info',
+            'imageMain',
         ];
 
         // fetch data logic
@@ -91,6 +92,8 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
         $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku = '$sku'");
         $ob = array_pop($list->getObjects());
 
-        return $ob instanceof Pimcore\Model\Object\MagentoBaseProduct ? $this->applyData($res, $ob) : [];
+        $res = $ob instanceof Pimcore\Model\Object\MagentoBaseProduct ? $this->applyData($res, $ob) : [];
+
+        return $res;
     }
 }

@@ -35,7 +35,7 @@ Test url (api returns data or nothing):
 
 ```
 http://myhost.local/plugin/ApiBridgeMagento/api/gateway?commandName=getProduct&sku=e123&apiKey=mypimcorerestapikey 
-response: {"sku":"e123","info":"info magento product"}
+response: {"sku":"e123","info":null,"imageMain":null}
 ```
 
 ## Release history
