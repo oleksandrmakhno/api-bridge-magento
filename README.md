@@ -41,7 +41,8 @@ response: {"sku":"e123","info":null,"imageMain":null}
 ## Release history
 
 * 20160205 0.0.1 pimcore plugin initial version 
-* 20160216 0.0.2 added logic to install as pimcore plugin 
+* 20160216 0.0.2 added logic to install as pimcore plugin
+* 20160329 0.1.0 for installation process testing
 
 ## Maintainer 
 * Oleksandr Makhno

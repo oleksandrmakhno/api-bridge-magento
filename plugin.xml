@@ -12,6 +12,7 @@
         <pluginIncludePaths>
             <path>/ApiBridgeMagento/lib</path>
             <path>/ApiBridgeMagento/controllers</path>
+            <path>/ApiBridgeMagento/models</path>
         </pluginIncludePaths>
         <pluginNamespaces>
             <namespace>ApiBridgeMagento</namespace>

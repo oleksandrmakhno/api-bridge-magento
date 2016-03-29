@@ -3,7 +3,7 @@
 class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
 {
     /**
-     * api user name
+     * pimcore api user name
      *
      * @var string
      */
@@ -17,7 +17,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
     /**
      * @var
      */
-    protected $apiKeyClient;
+    protected $apiModel;
 
     /**
      * @var
@@ -32,8 +32,12 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
         $this->apiKey = isset($this->apiKey) ? $this->apiKey : \Pimcore\Model\User::getByName($this->userApiBridgeMagento)->getApiKey();
 
         if (!$this->validateApiKey()) {
+
             die; // no any error info provided
         }
+
+        // init api
+        $this->apiModel = new ApiBridgeMagento_Api();
     }
 
     /**
@@ -41,7 +45,7 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
      */
     protected function validateApiKey()
     {
-        return $this->apiKey === $this->allParam['apiKey'];
+        return $this->apiKey === $this->allParam['paramApiKey'];
     }
 
     /**
@@ -50,50 +54,11 @@ class ApiBridgeMagento_ApiController extends \Pimcore\Controller\Action\Frontend
     public function gatewayAction()
     {
         $res = [];
-        if (method_exists($this, $this->allParam['commandName'])) {
-            $res = $this->{$this->allParam['commandName']}($this->allParam['sku']);
+        if (method_exists($this->apiModel, $this->allParam['paramCommand'])) {
+            $res = $this->apiModel->{$this->allParam['paramCommand']}($this->allParam);
         }
 
         echo json_encode($res);
         die;
-    }
-
-    /**
-     * @param array $scheme
-     * @param $ob
-     * @return array
-     */
-    protected function applyData(array $scheme, $ob)
-    {
-        $res = [];
-        foreach ($scheme as $key) {
-            $getter = 'get' . ucfirst($key);
-            $res[$key] = $ob->$getter();
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param $sku
-     * @return array
-     */
-    protected function getProduct($sku)
-    {
-        // list needed fields here
-        $res = [
-            'sku',
-            'info',
-            'imageMain',
-        ];
-
-        // fetch data logic
-        $list = new \Pimcore\Model\Object\MagentoBaseProduct\Listing();
-        $list->setCondition("o_type = 'object' and o_className = 'MagentoBaseProduct' and sku = '$sku'");
-        $ob = array_pop($list->getObjects());
-
-        $res = $ob instanceof Pimcore\Model\Object\MagentoBaseProduct ? $this->applyData($res, $ob) : [];
-
-        return $res;
     }
 }
