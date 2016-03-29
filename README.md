@@ -31,10 +31,11 @@ Manage pimcore settings:
 7. pimcore => objects panel => home (right click) add object => MagentoBaseProduct (sku=e123) => save 
 ```
 
-Test url (api returns data or nothing): 
-
+## Test api call
+1. pimcore api returns data or nothing
+2. we can test in browser
 ```
-http://myhost.local/plugin/ApiBridgeMagento/api/gateway?commandName=commandGetProduct&sku=e123&apiKey=mypimcorerestapikey 
+http://pimcore.local/plugin/ApiBridgeMagento/api/gateway?commandName=commandGetProduct&sku=e123&apiKey=mypimcorerestapikey
 response: {"sku":"e123","info":null,"imageMain":null}
 ```
 
@@ -42,7 +43,7 @@ response: {"sku":"e123","info":null,"imageMain":null}
 
 * 20160205 0.0.1 pimcore plugin initial version 
 * 20160216 0.0.2 added logic to install as pimcore plugin
-* 20160329 0.1.0 for installation process testing
+* 20160329 0.1.0 version for installation process testing
 
 ## Maintainer 
 * Oleksandr Makhno
