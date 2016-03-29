@@ -46,6 +46,7 @@ response: {"sku":"e123","info":null,"imageMain":null}
 * 20160216 0.0.2 added logic to install as pimcore plugin
 * 20160329 0.1.0 version for installation process testing
 * 20160329 0.2.0 version for installation process testing
+* 20160329 0.3.0 version for installation process testing
 
 ## Maintainer
 
