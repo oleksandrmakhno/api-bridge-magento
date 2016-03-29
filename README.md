@@ -1,5 +1,7 @@
 # Pimcore plugin api-bridge-magento
 
+## Package content
+
 Bridge includes 2 extensions:
 
 1. magento extension https://github.com/oleksandrmakhno/api-bridge-pimcore 
@@ -55,6 +57,7 @@ response: {"sku":"e123","info":null,"imageMain":null}
 * 20160329 0.2.0 version for installation process testing
 * 20160329 0.3.0 version for installation process testing
 * 20160329 0.4.0 description added
+* 20160329 0.5.0 folder structure changed, images added
 
 ## Maintainer
 
