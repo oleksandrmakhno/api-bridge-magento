@@ -5,6 +5,13 @@ Bridge includes 2 extensions:
 1. magento extension https://github.com/oleksandrmakhno/api-bridge-pimcore 
 2. pimcore plugin https://github.com/oleksandrmakhno/api-bridge-magento
 
+## How it works
+
+1. very simple
+2. in magento we have product 'shirt' with sku = e123
+3. in pimcore we have MagentoBaseProduct 'shirt' with sku = e123
+4. for example when in magento we open PDP (product details page) for 'shirt' - api call to pimcore fetch product media data
+
 ## Pimcore plugin installation
 
 Using Composer:
@@ -47,6 +54,7 @@ response: {"sku":"e123","info":null,"imageMain":null}
 * 20160329 0.1.0 version for installation process testing
 * 20160329 0.2.0 version for installation process testing
 * 20160329 0.3.0 version for installation process testing
+* 20160329 0.4.0 description added
 
 ## Maintainer
 
