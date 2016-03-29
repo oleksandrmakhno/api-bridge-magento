@@ -22,13 +22,13 @@ https://github.com/oleksandrmakhno/api-bridge-magento.git
 Manage pimcore settings: 
 
 ```
-1. pimcore => settings => object => classes => add class 'MagentoBaseProduct' => import (button in the bottom) => objectDefinition/class_MagentoBaseProduct_export.json 
+1. pimcore => settings => object => classes => add class 'MagentoBaseProduct' => import (button in the bottom) => objectDefinition/class_MagentoBaseProduct_export.json => save
 2. pimcore => settings => system => web service api => web service api enabled (check checkbox) => save 
 3. pimcore => settings => users / roles => users => create user 'api-bridge-magento' => save 
 4. pimcore => settings => users / roles => users => select user 'api-bridge-magento' => generate user api key (mypimcorerestapikey) => save
-5. magento => system => configuration => api bridge pimcore => settings => pimcore api user key => set generated value (mypimcorerestapikey) => save config
+5. (install extension to magento) magento => system => configuration => api bridge pimcore => settings => pimcore api user key => set generated value (mypimcorerestapikey) => save config
 6. pimcore => extras => extensions => extension 'ApiBridgeMagento' => enable
-7. pimcore => objects panel => home (right click) add object => MagentoBaseProduct (sku=e123) => save 
+7. pimcore => objects panel => home (right click) add object => MagentoBaseProduct (sku=e123) => save & publish
 ```
 
 ## Test api call
