@@ -11,7 +11,7 @@ Bridge includes 2 extensions:
 
 1. very simple
 2. in magento we have product 'shirt' with sku = e123
-3. in pimcore we have MagentoBaseProduct 'shirt' with sku = e123
+3. in pimcore we have object MagentoBaseProduct 'shirt' with sku = e123
 4. for example when in magento we open PDP (product details page) for 'shirt' - api call to pimcore fetch product media data
 
 ## Pimcore plugin installation
@@ -33,7 +33,7 @@ Manage pimcore settings:
 ```
 1. pimcore => settings => object => classes => add class 'MagentoBaseProduct' => import (button in the bottom) => install/objectDefinition/class_MagentoBaseProduct_export.json => save
 2. pimcore => settings => system => web service api => web service api enabled (check checkbox) => save 
-3. pimcore => settings => users / roles => users => create user 'api-bridge-magento' => save 
+3. pimcore => settings => users / roles => users => create user 'api-bridge-magento'
 4. pimcore => settings => users / roles => users => select user 'api-bridge-magento' => generate user api key (mypimcorerestapikey) => save
 5. (install extension to magento) magento => system => configuration => api bridge pimcore => settings => pimcore api user key => set generated value (mypimcorerestapikey) => save config
 6. pimcore => extras => extensions => extension 'ApiBridgeMagento' => enable
@@ -58,6 +58,8 @@ response: {"sku":"e123","info":null,"imageMain":null}
 * 20160329 0.3.0 version for installation process testing
 * 20160329 0.4.0 description added
 * 20160329 0.5.0 folder structure changed, images added
+* 20160329 0.6.0 added folders doc, install
+* 20160330 1.0.0 public release
 
 ## Maintainer
 
