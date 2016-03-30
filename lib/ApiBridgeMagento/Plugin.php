@@ -8,7 +8,6 @@ class ApiBridgeMagento_Plugin extends AbstractPlugin implements PluginInterface
 {
     public static function install()
     {
-        file_put_contents('one', '111'); 
         // TODO: Implement install() method.
     }
 
